@@ -1,78 +1,107 @@
 <html>
 	<head>
+		
+		
 		<style>
-			body {
-				padding: 0px;
-				margin : 0px;
-				background: #eee;
+		
+			* {
+				font-family: cursive;
 			}
 			h2 {
-				text-align : center;
+				text-align:center;
 			}
-			#txt {
+			body {
+				background: #eee;
+				padding:0px;
+				margin:0px;
+			}
+			#myTxtBox {
 				width: calc( 100% - 60px );
+				border-radius: 5px;
+				padding: 7px 15px;
+			}
+			
+			#myTxtBtn {
+				width: 50px;
 				border-radius: 5px;
 				padding: 7px 5px;
 			}
 			
-			#txtCont {
-				padding: 10px;
-			}
-			
-			#txtBtn{
-				padding: 7px 0px;
-				width: 50px;
-			}
 			#todoList {
 				list-style: none;
+				margin: 10px 0;
 				padding: 0px;
+				border-radius: 5px;
 			}
-			.todoListItem {
+			
+			.listItem {
+				padding: 7px 14px;
+				background: #fff;
+				border: 1px inset grey;
+				margin-top: -1px;
+			}
+			.listItem .todoTxt{
+				width: calc( 100% - 60px );
 				display: inline-block;
-				padding: 10px;
-				width: calc( 100% - 20px);
 			}
-
-            #tabs{
-                background: grey;
-            }
-            #tabs a {
-                text-decoration: none;
-                text-align: center;
-                width: 49%;
-                display: inline-block;
-                padding: 7px 0px;
-                color: white;
-            }
-            #tabs a:active {
-                background: #000;
-            }
+			.listItem .removeBtn{
+				background: url(icon_close.png);
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: inline-block;
+				width: 50px;
+				height: 25px;
+				vertical-align: top;
+			}
+			
+			.strikeOut {
+				text-decoration: line-through;
+			}
+			
+			#tabs{
+				background: grey;
+			}
+			#tabs a{
+				text-align: center;
+				width: 49%;
+				display: inline-block;
+				padding: 5px 0px;
+				text-decoration: none;
+				color: white;
+			}
+			#tabs a:active{
+				background: black;
+			}
 			
 		</style>
 		
 		<script>
-
-            //alert("aaa");
-            function addItem(){
-                //txtBtn
-            }
-
+		
+		
+		
 		</script>
+		
 	</head>
-	
 	<body>
-		
+	
 		<div id="tabs">
-            <a href="home.html" >Home</a>
-            <a href="about.html" >About</a>
+			<a href="index.html">Home</a>
+			<a href="about.html">About</a>
 		</div>
-		
-		<div id="headerCont">
-			<h2>My About Page</h2>
+	
+		<div id="myHeaderCont">
+			<h2 id="myHeader">About Page</h2>
 		</div>
+	
 		
-		<div><p>Here is about text</p></div>
 		
+		<div id="content">
+			<p>
+				This is About page.
+			</p>
+		</div>
+
 		
 	</body>
 </html>

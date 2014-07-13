@@ -1,0 +1,111 @@
+<html>
+	<head>
+		
+		
+		<style>
+		
+			* {
+				font-family: cursive;
+			}
+			h2 {
+				text-align:center;
+			}
+			body {
+				background: #eee;
+			}
+			#myTxtBox {
+				width: calc( 100% - 60px );
+				border-radius: 5px;
+				padding: 7px 15px;
+			}
+			
+			#myTxtBtn {
+				width: 50px;
+				border-radius: 5px;
+				padding: 7px 5px;
+			}
+			
+			#todoList {
+				list-style: none;
+				margin: 10px 0;
+				padding: 0px;
+				border-radius: 5px;
+			}
+			
+			.listItem {
+				padding: 7px 14px;
+				background: #fff;
+				border: 1px inset grey;
+				margin-top: -1px;
+			}
+			.listItem .todoTxt{
+				width: calc( 100% - 60px );
+				display: inline-block;
+			}
+			.listItem .removeBtn{
+				background: url(icon_close.png);
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: inline-block;
+				width: 50px;
+				height: 25px;
+				vertical-align: top;
+			}
+			
+			.strikeOut {
+				text-decoration: line-through;
+			}
+			
+		</style>
+		
+		<script src="jquery.js" ></script>
+		
+		<script>
+		
+		$(function(){
+			
+			$(document).on("click","#myTxtBtn",function(){
+				var txt = $("#myTxtBox").val().trim();
+				if(txt){					
+					$("#todoList").append('<li class="listItem"><span class="todoTxt">'+ txt +'</span><span class="removeBtn"></span></li>');
+				}
+			});
+			
+			$(document).on("click",".removeBtn",function(){
+				if(confirm("Are you sure you want to delete this?")){					
+					$(this).closest('.listItem').remove();
+				}
+			});
+			
+			$(document).on("click",".todoTxt",function(){				
+				$(this).toggleClass( "strikeOut" );
+			});
+			
+		});
+		
+		</script>
+		
+	</head>
+	<body>
+		<div id="myHeaderCont">
+			<h2 id="myHeader">My First Todo App</h2>
+		</div>
+	
+		<div id="myTxtBoxCont">
+			<input type="text" id="myTxtBox" placeholder="Enter Task" />
+			<button id="myTxtBtn" >Add</button>
+		</div>
+		
+		<div id="todoListCont">
+			<ul id="todoList">
+				<!--<li class="listItem"><span class="todoTxt">Item 1</span><span class="removeBtn"></span></li>
+				<li class="listItem"><span class="todoTxt">Item 2</span><span class="removeBtn"></span></li>
+				<li class="listItem"><span class="todoTxt">Item 3</span><span class="removeBtn"></span></li>
+				<li class="listItem"><span class="todoTxt">Item 4</span><span class="removeBtn"></span></li>-->
+			</ul>
+		</div>
+
+		
+	</body>
+</html>
