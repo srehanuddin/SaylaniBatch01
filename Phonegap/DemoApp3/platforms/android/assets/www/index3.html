@@ -12,8 +12,6 @@
 			}
 			body {
 				background: #eee;
-				padding:0px;
-				margin:0px;
 			}
 			#myTxtBox {
 				width: calc( 100% - 60px );
@@ -59,26 +57,12 @@
 				text-decoration: line-through;
 			}
 			
-			#tabs{
-				background: grey;
-			}
-			#tabs a{
-				text-align: center;
-				width: 49%;
-				display: inline-block;
-				padding: 5px 0px;
-				text-decoration: none;
-				color: white;
-			}
-			#tabs a:active{
-				background: black;
-			}
-			
 		</style>
+		
+		<script src="jquery.js" ></script>
 		
 		<script>
 		
-		/*
 		$(function(){
 			
 			$(document).on("click","#myTxtBtn",function(){
@@ -99,81 +83,18 @@
 			});
 			
 		});
-		*/
-		
-		var todos = [];
-		
-		function generateHtml(){
-			
-			var todoList = document.getElementById("todoList");
-			var html = '';
-			for(var i = 0; i < todos.length ; i++){
-				html += '<li class="listItem" ><span onclick="removeItem('+ i +')" class="removeBtn" ></span><span class="todoTxt" onclick="toggleTodo(this)" >'+ todos[i] +'</span></li>';
-			}
-			todoList.innerHTML = html;	
-			
-		}
-		
-		function addTodoItem(){
-			var txtBox = document.getElementById("myTxtBox");
-			var txt = txtBox.value.trim();
-			txtBox.value = "";
-			
-			if(txt){	
-
-				todos.push(txt);
-			
-				generateHtml();
-			
-				//var todoList = document.getElementById("todoList");
-				//todoList.innerHTML += '<li id="'+ id +'" class="listItem '+ id +'" data-id="' + id + '"><span onclick="removeItem(this)" class="removeBtn" data-id="' + id + '"></span><span class="todoTxt" onclick="toggleTodo(this)" >'+ txt +'</span></li>';
-			}
-		}
-		
-		function removeItem(index){
-			console.log(todos);
-			todos.splice(index, 1);
-			console.log(todos);
-			generateHtml();
-			
-			/*
-			alert(el);
-			alert(el && el.parentNode);
-			alert(el && el.parentNode && el.parentNode.remove);
-			alert(el && el.parentNode && el.parentNode.remove && el.parentNode.remove());	
-			
-			alert(el);
-			alert(el && el.parentElement);
-			alert(el && el.parentElement && el.parentElement.remove);
-			alert(el && el.parentElement && el.parentElement.remove && el.parentElement.remove());
-			*/
-		}
-		
-		function toggleTodo(el){
-			if(el.style.textDecoration != "line-through"){
-				el.style.textDecoration = "line-through";
-			} else {
-				el.style.textDecoration = "none";
-			}
-		}
 		
 		</script>
 		
 	</head>
 	<body>
-	
-		<div id="tabs">
-			<a href="index.html">Home</a>
-			<a href="about.html">About</a>
-		</div>
-	
 		<div id="myHeaderCont">
 			<h2 id="myHeader">My First Todo App</h2>
 		</div>
 	
 		<div id="myTxtBoxCont">
 			<input type="text" id="myTxtBox" placeholder="Enter Task" />
-			<button id="myTxtBtn" onclick="addTodoItem()" >Add</button>
+			<button id="myTxtBtn" >Add</button>
 		</div>
 		
 		<div id="todoListCont">

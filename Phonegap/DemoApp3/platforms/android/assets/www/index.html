@@ -1,0 +1,156 @@
+<html>
+	<head>
+
+        <script src="cordova.js"></script>
+		
+		<style>
+		
+			* {
+				font-family: cursive;
+			}
+			h2 {
+				text-align:center;
+			}
+			body {
+				background: #eee;
+				padding:0px;
+				margin:0px;
+			}
+			#myTxtBox {
+				width: calc( 100% - 60px );
+				border-radius: 5px;
+				padding: 7px 15px;
+			}
+			
+			#myTxtBtn {
+				width: 50px;
+				border-radius: 5px;
+				padding: 7px 5px;
+			}
+			
+			#todoList {
+				list-style: none;
+				margin: 10px 0;
+				padding: 0px;
+				border-radius: 5px;
+			}
+			
+			.listItem {
+				padding: 7px 14px;
+				background: #fff;
+				border: 1px inset grey;
+				margin-top: -1px;
+			}
+			.listItem .todoTxt{
+				width: calc( 100% - 60px );
+				display: inline-block;
+			}
+			.listItem .removeBtn{
+				background: url(icon_close.png);
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: inline-block;
+				width: 50px;
+				height: 25px;
+				vertical-align: top;
+			}
+			
+			.strikeOut {
+				text-decoration: line-through;
+			}
+			
+			#tabs{
+				background: grey;
+			}
+			#tabs a{
+				text-align: center;
+				width: 49%;
+				display: inline-block;
+				padding: 5px 0px;
+				text-decoration: none;
+				color: white;
+			}
+			#tabs a:active{
+				background: black;
+			}
+			
+		</style>
+		
+		<script>
+		
+
+		document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            alert("Device Ready");
+            // Now safe to use device APIs
+            //document.getElementById('txtData').innerHTML = "Loaded";
+
+
+
+            //alert(navigator);
+            //alert(navigator.camera);
+            //alert(navigator.camera.getPicture);
+
+            navigator.camera.getPicture(onSuccess, onFail, {
+                quality: 5,
+                destinationType: Camera.DestinationType.DATA_URL,
+                encodingType: Camera.EncodingType.JPEG,
+                sourceType : Camera.PictureSourceType.CAMERA,
+                allowEdit : true
+            });
+
+            function onSuccess(imageURI) {
+                alert(imageURI);
+                var image = document.getElementById('myImage');
+                image.src = imageURI;
+            }
+
+            function onFail(message) {
+                alert('Failed because: ' + message);
+            }
+
+
+        }
+
+
+
+
+		
+		</script>
+		
+	</head>
+	<body>
+
+    <input type="text" id="imgQuality">
+		<div id="tabs">
+			<a href="index.html">Home</a>
+			<a href="about.html">About</a>
+		</div>
+
+		<div id="myHeaderCont">
+			<h2 id="myHeader">My First Todo App</h2>
+		</div>
+
+        <div>
+            <img id="myImage" />
+        </div>
+	
+		<div id="myTxtBoxCont">
+			<input type="text" id="myTxtBox" placeholder="Enter Task" />
+			<button id="myTxtBtn" onclick="addTodoItem()" >Add</button>
+		</div>
+		
+		<div id="todoListCont">
+			<ul id="todoList">
+				<!--<li class="listItem"><span class="todoTxt">Item 1</span><span class="removeBtn"></span></li>
+				<li class="listItem"><span class="todoTxt">Item 2</span><span class="removeBtn"></span></li>
+				<li class="listItem"><span class="todoTxt">Item 3</span><span class="removeBtn"></span></li>
+				<li class="listItem"><span class="todoTxt">Item 4</span><span class="removeBtn"></span></li>-->
+			</ul>
+		</div>
+
+		
+	</body>
+</html>
