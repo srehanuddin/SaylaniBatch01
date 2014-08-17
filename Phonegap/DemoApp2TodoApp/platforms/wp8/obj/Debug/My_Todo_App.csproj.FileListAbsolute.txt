@@ -1,0 +1,14 @@
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\Bin\Debug\ApplicationIcon.png
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\Bin\Debug\Background.png
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\Bin\Debug\com.saylani.todoapp.dll
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\Bin\Debug\com.saylani.todoapp.pdb
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\Bin\Debug\AppManifest.xaml
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\Bin\Debug\Properties\WMAppManifest.xml
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\Bin\Debug\CordovaAppProj_Debug_AnyCPU.xap
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\obj\Debug\App.g.cs
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\obj\Debug\cordovalib\CordovaView.g.cs
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\obj\Debug\MainPage.g.cs
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\obj\Debug\com.saylani.todoapp.g.resources
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\obj\Debug\com.saylani.todoapp.dll
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\obj\Debug\com.saylani.todoapp.pdb
+F:\OB\Saylani\Batch-01\Class\Phonegap\DemoApp2TodoApp\platforms\wp8\obj\Debug\XapCacheFile.xml
