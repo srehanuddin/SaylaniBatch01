@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+
+
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+ <div class="bar bar-header bar-calm">
+      <h1 class="title">bar-light</h1>
+  </div>
+  <div class="bar bar-subheader bar-dark">
+      <h2 class="title">Sub Header</h2>
+  </div>
+
+ <div class="bar bar-footer bar-calm">
+
+     <button class="button button-clear pull-right">Left</button>
+ </div>
+
+
+ <ion-content class="has-header has-subheader has-footer" direction="y" padding="true" has-bouncing="true" >
+
+     <ul id="listStudent">
+
+     </ul>
+
+     <button class="button button-clear">Left</button>
+
+     <button class="button button-block button-positive">
+         Block Button
+     </button>
+
+
+     <div class="list">
+
+         <a class="item item-avatar item-avatar-right" href="#">
+             <img src="img/ionic.png">
+             <h2>Venkman</h2>
+             <p>Back off, man. I'm a scientist.</p>
+         </a>
+
+         <div class="item item-divider">
+             Heading 1
+         </div>
+         <div class="item">
+             Item 1
+         </div>
+         <div class="item ">
+             Item 2
+         </div>
+         <div class="item item-divider">
+             Heading 2
+         </div>
+         <div class="item">
+             Item 1
+         </div>
+         <div class="item ">
+             Item 2
+         </div>
+     </div>
+
+     <div class="card">
+         <div class="item item-divider">
+             I'm a Header in a Card!
+         </div>
+         <div class="item item-text-wrap">
+             This is a basic Card with some text.
+         </div>
+         <div class="item item-divider">
+             I'm a Footer in a Card!
+         </div>
+     </div>
+
+     <div class="list">
+         <label class="item item-input">
+             <input type="text" placeholder="First Name">
+         </label>
+         <label class="item item-input">
+             <input type="text" placeholder="Last Name">
+         </label>
+         <label class="item item-input">
+             <textarea placeholder="Comments"></textarea>
+         </label>
+     </div>
+
+     <div class="list list-inset">
+         <label class="item item-input">
+             <i class="icon ion-search "></i>
+             <input type="text" placeholder="Search">
+         </label>
+     </div>
+
+     <div class="list card">
+
+         <a href="#" class="item item-icon-left">
+             <i class="icon ion-home"></i>
+             Enter home address
+         </a>
+
+         <a href="#" class="item item-icon-left">
+             <i class="icon ion-ios7-telephone"></i>
+             Enter phone number
+         </a>
+
+         <a href="#" class="item item-icon-left">
+             <i class="icon ion-wifi"></i>
+             Enter wireless password
+         </a>
+
+         <a href="#" class="item item-icon-left">
+             <i class="icon ion-card"></i>
+             Enter card information
+         </a>
+
+         <a class="item item-icon-left" href="#">
+             <i class="icon ion-music-note"></i>
+             Start listening
+         </a>
+
+     </div>
+
+
+     <!--<button class="button">
+         <i class="icon ion-loading-c"></i> Loading...
+     </button>
+
+     <button class="button icon-left ion-home">Home</button>
+     <button class="button icon ion-home button-icon"></button>
+-->
+     <!--<div class="button-bar">
+         <a class="button  icon-left ion-home"></a>
+         <a class="button">Second</a>
+         <a class="button">Third</a>
+         <a class="button">First</a>
+         <a class="button">Second</a>
+         <a class="button">Third</a>
+         <a class="button">First</a>
+         <a class="button">Second</a>
+         <a class="button">Third</a>
+     </div>
+-->
+
+
+   <!--  kjshfjkah
+      <br>
+      fjkas
+      <br>
+      fjkas<br>
+      fjkas<br>
+      fjkas<br>
+      fj43ka654<br>
+      fjka654<br>
+      fjkewa654<br>
+      fjkewfdsa654<br>
+     fjkas<br>
+     fjkas<br>
+     fjkas<br>
+     fj43ka654<br>
+     fjka654<br>
+     fjkewa654<br>
+     fjkewfdsa654<br>
+     fjkas<br>
+     fjkas<br>
+     fjkas<br>
+     fj43ka654<br>
+     fjka654<br>
+     fjkewa654<br>
+     fjkewfdsa654<br>
+     fjkas<br>
+     fjkas<br>
+     fjkas<br>
+     fj43ka654<br>
+     fjka654<br>
+     fjkewa654<br>
+     fjkewfdsa654<br>
+     fjkas<br>
+     fjkas<br>
+     fjkas<br>
+     fj43ka654<br>
+     fjka654<br>
+     fjkewa654<br>
+     fjkewfdsa654<br>
+     fjkas<br>
+     fjkas<br>
+     fjkas<br>
+     fj43ka654<br>
+     fjka654<br>
+     fjkewa654<br>
+     fjkewfdsa654<br>
+     fjkas<br>
+     fjkas<br>
+     fjkas<br>
+     fj43ka654<br>
+     fjka654<br>
+     fjkewa654<br>
+     fjkewfdsa654<br>
+     fjkas<br>
+     fjkas<br>
+     fjkas<br>
+     fj43ka654<br>
+     fjka654<br>
+     fjkewa654<br>
+     fjkewfdsa654<br>
+     fjkas<br>
+     fjkas<br>
+     fjkas<br>
+     fj43ka654<br>
+     fjka654<br>
+     fjkewa654<br>
+     fjkewfdsa654<br>
+     fjkas<br>
+     fjkas<br>
+     fjkas<br>
+     fj43ka654<br>
+     fjka654<br>
+     fjkewa654<br>
+     fjkewfdsa654<br>
+     fjkas<br>
+     fjkas<br>
+     fjkas<br>
+     fj43ka654<br>
+     fjka654<br>
+     fjkewa654<br>
+     fjkewfdsa654<br>
+      fjkas-->
+ </ion-content>
+
+  <script>
+
+      var a = [
+          { name : "Name 1" },
+          { name : "Name 2" },
+          { name : "Name 3" },
+          { name : "Name 4" },
+          { name : "Name 5" },
+          { name : "Name6" },
+          { name : " Name7" },
+          { name : "Name8" },
+          { name : "Name9" }
+      ]
+
+      var html = "";
+
+      for(var i=0; i< a.length ; i++){
+          html += '<li><a href="detail.html#'+ i +'" >' + a[i].name + '</a></li>';
+      }
+
+
+      document.getElementById('listStudent').innerHTML = html;
+
+  </script>
+
+  </body>
+</html>

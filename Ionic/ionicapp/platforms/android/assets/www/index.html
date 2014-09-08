@@ -1,275 +1,196 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<html ng-app="ionicApp">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <title>Tabs Example</title>
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+    <link href="http://code.ionicframework.com/1.0.0-beta.11/css/ionic.css" rel="stylesheet">
+    <script src="http://code.ionicframework.com/1.0.0-beta.11/js/ionic.bundle.js"></script>
 
-
-
-
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-    <!-- your app's js -->
     <script src="js/app.js"></script>
-  </head>
-  <body ng-app="starter">
 
- <div class="bar bar-header bar-calm">
-      <h1 class="title">bar-light</h1>
-  </div>
-  <div class="bar bar-subheader bar-dark">
-      <h2 class="title">Sub Header</h2>
-  </div>
+</head>
 
- <div class="bar bar-footer bar-calm">
-
-     <button class="button button-clear pull-right">Left</button>
- </div>
+<body ng-controller="MyController">
 
 
- <ion-content class="has-header has-subheader has-footer" direction="y" padding="true" has-bouncing="true" >
 
-     <ul id="listStudent">
-
-     </ul>
-
-     <button class="button button-clear">Left</button>
-
-     <button class="button button-block button-positive">
-         Block Button
-     </button>
+<ion-side-menus>
+    &lt;!&ndash; Center content &ndash;&gt;
+    <ion-side-menu-content ng-controller="ContentController">
 
 
-     <div class="list">
-
-         <a class="item item-avatar item-avatar-right" href="#">
-             <img src="img/ionic.png">
-             <h2>Venkman</h2>
-             <p>Back off, man. I'm a scientist.</p>
-         </a>
-
-         <div class="item item-divider">
-             Heading 1
-         </div>
-         <div class="item">
-             Item 1
-         </div>
-         <div class="item ">
-             Item 2
-         </div>
-         <div class="item item-divider">
-             Heading 2
-         </div>
-         <div class="item">
-             Item 1
-         </div>
-         <div class="item ">
-             Item 2
-         </div>
-     </div>
-
-     <div class="card">
-         <div class="item item-divider">
-             I'm a Header in a Card!
-         </div>
-         <div class="item item-text-wrap">
-             This is a basic Card with some text.
-         </div>
-         <div class="item item-divider">
-             I'm a Footer in a Card!
-         </div>
-     </div>
-
-     <div class="list">
-         <label class="item item-input">
-             <input type="text" placeholder="First Name">
-         </label>
-         <label class="item item-input">
-             <input type="text" placeholder="Last Name">
-         </label>
-         <label class="item item-input">
-             <textarea placeholder="Comments"></textarea>
-         </label>
-     </div>
-
-     <div class="list list-inset">
-         <label class="item item-input">
-             <i class="icon ion-search "></i>
-             <input type="text" placeholder="Search">
-         </label>
-     </div>
-
-     <div class="list card">
-
-         <a href="#" class="item item-icon-left">
-             <i class="icon ion-home"></i>
-             Enter home address
-         </a>
-
-         <a href="#" class="item item-icon-left">
-             <i class="icon ion-ios7-telephone"></i>
-             Enter phone number
-         </a>
-
-         <a href="#" class="item item-icon-left">
-             <i class="icon ion-wifi"></i>
-             Enter wireless password
-         </a>
-
-         <a href="#" class="item item-icon-left">
-             <i class="icon ion-card"></i>
-             Enter card information
-         </a>
-
-         <a class="item item-icon-left" href="#">
-             <i class="icon ion-music-note"></i>
-             Start listening
-         </a>
-
-     </div>
+        <ion-nav-view name="aaa" animation="slide-left-right">
+            Test
+        </ion-nav-view>
+        <div class="tabs">
+            <a href="#/blank" class="tab-item">
+                Blank
+            </a>
+            <a href="#/music" class="tab-item">
+                Music
+            </a>
+            <a href="#/home" class="tab-item">
+                Home
+            </a>
+        </div>
 
 
-     <!--<button class="button">
-         <i class="icon ion-loading-c"></i> Loading...
-     </button>
+    </ion-side-menu-content>
 
-     <button class="button icon-left ion-home">Home</button>
-     <button class="button icon ion-home button-icon"></button>
--->
-     <!--<div class="button-bar">
-         <a class="button  icon-left ion-home"></a>
-         <a class="button">Second</a>
-         <a class="button">Third</a>
-         <a class="button">First</a>
-         <a class="button">Second</a>
-         <a class="button">Third</a>
-         <a class="button">First</a>
-         <a class="button">Second</a>
-         <a class="button">Third</a>
-     </div>
+
+    <ion-side-menu side="left">
+        <ul>
+            <li>Test1</li>
+            <li>Test2</li>
+            <li>Test3</li>
+        </ul>
+    </ion-side-menu>
+
+
+    <ion-side-menu side="right">
+        <ul>
+            <li>Test1</li>
+            <li>Test2</li>
+            <li>Test3</li>
+        </ul>
+    </ion-side-menu>
+</ion-side-menus>
+
+<!--
+
+<ion-side-menus>
+
+    <ion-pane ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+    </ion-pane>
+
+    <ion-side-menu side="left">
+        <header class="bar bar-header bar-stable">
+            <h1 class="title">Left</h1>
+        </header>
+        <ion-content class="has-header">
+            <ion-list>
+                <ion-item nav-clear menu-close href="#/app/search">
+                    Search
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/app/browse">
+                    Browse
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/app/playlists">
+                    Playlists
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
 -->
 
-
-   <!--  kjshfjkah
-      <br>
-      fjkas
-      <br>
-      fjkas<br>
-      fjkas<br>
-      fjkas<br>
-      fj43ka654<br>
-      fjka654<br>
-      fjkewa654<br>
-      fjkewfdsa654<br>
-     fjkas<br>
-     fjkas<br>
-     fjkas<br>
-     fj43ka654<br>
-     fjka654<br>
-     fjkewa654<br>
-     fjkewfdsa654<br>
-     fjkas<br>
-     fjkas<br>
-     fjkas<br>
-     fj43ka654<br>
-     fjka654<br>
-     fjkewa654<br>
-     fjkewfdsa654<br>
-     fjkas<br>
-     fjkas<br>
-     fjkas<br>
-     fj43ka654<br>
-     fjka654<br>
-     fjkewa654<br>
-     fjkewfdsa654<br>
-     fjkas<br>
-     fjkas<br>
-     fjkas<br>
-     fj43ka654<br>
-     fjka654<br>
-     fjkewa654<br>
-     fjkewfdsa654<br>
-     fjkas<br>
-     fjkas<br>
-     fjkas<br>
-     fj43ka654<br>
-     fjka654<br>
-     fjkewa654<br>
-     fjkewfdsa654<br>
-     fjkas<br>
-     fjkas<br>
-     fjkas<br>
-     fj43ka654<br>
-     fjka654<br>
-     fjkewa654<br>
-     fjkewfdsa654<br>
-     fjkas<br>
-     fjkas<br>
-     fjkas<br>
-     fj43ka654<br>
-     fjka654<br>
-     fjkewa654<br>
-     fjkewfdsa654<br>
-     fjkas<br>
-     fjkas<br>
-     fjkas<br>
-     fj43ka654<br>
-     fjka654<br>
-     fjkewa654<br>
-     fjkewfdsa654<br>
-     fjkas<br>
-     fjkas<br>
-     fjkas<br>
-     fj43ka654<br>
-     fjka654<br>
-     fjkewa654<br>
-     fjkewfdsa654<br>
-     fjkas<br>
-     fjkas<br>
-     fjkas<br>
-     fj43ka654<br>
-     fjka654<br>
-     fjkewa654<br>
-     fjkewfdsa654<br>
-      fjkas-->
- </ion-content>
-
-  <script>
-
-      var a = [
-          { name : "Name 1" },
-          { name : "Name 2" },
-          { name : "Name 3" },
-          { name : "Name 4" },
-          { name : "Name 5" },
-          { name : "Name6" },
-          { name : " Name7" },
-          { name : "Name8" },
-          { name : "Name9" }
-      ]
-
-      var html = "";
-
-      for(var i=0; i< a.length ; i++){
-          html += '<li><a href="detail.html#'+ i +'" >' + a[i].name + '</a></li>';
-      }
+<!--
+<ion-nav-view animation="slide-left-right">
+    Test
+</ion-nav-view>
 
 
-      document.getElementById('listStudent').innerHTML = html;
+<div class="tabs">
+    <a href="#/blank" class="tab-item">
+        Blank
+    </a>
+    <a href="#/music" class="tab-item">
+        Music
+    </a>
+    <a href="#/home" class="tab-item">
+        Home
+    </a>
+</div>-->
+<!--
+<ion-nav-bar class="bar-positive">
+</ion-nav-bar>
+<ion-tabs class="tabs-positive">
+    <ion-tab icon="ion-home" ui-sref="home">
+        <ion-nav-view name="home"></ion-nav-view>
+    </ion-tab>
+    <ion-tab icon="ion-help" ui-sref="help">
+        <ion-nav-view name="help"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>-->
 
-  </script>
+<!--<script type="text/ng-template" id="home.html">
+    <ion-view title="Home">
+        <ion-content padding="true">
+            <h2>Home Page</h2>
+            <p>Here's the main route for the app.</p>
+        </ion-content>
+    </ion-view>
+</script>
 
-  </body>
+<script type="text/ng-template" id="help.html">
+    <ion-view title="Help">
+        <ion-content padding="true">
+            <h2>Using the app</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis architecto hic officia quasi excepturi sequi deleniti maiores consectetur veritatis sint?</p>
+        </ion-content>
+    </ion-view>
+</script>-->
+<script type="text/ng-template" id="music.html">
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+        <ion-slide>
+            <div class="box blue" style="background: blue"><h1>BLUE</h1></div>
+        </ion-slide>
+        <ion-slide>
+            <div class="box yellow" style="background: yellow"><h1>YELLOW</h1></div>
+        </ion-slide>
+        <ion-slide>
+            <div class="box pink" style="background: pink"><h1>PINK</h1></div>
+        </ion-slide>
+    </ion-slide-box>
+    <!--<ion-view title="Help">
+        <ion-content padding="true">
+            <h2>Music</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis architecto hic officia quasi excepturi sequi deleniti maiores consectetur veritatis sint?</p>
+        </ion-content>
+    </ion-view>-->
+</script>
+<script type="text/ng-template" id="blank.html">
+
+    <!--<ion-side-menus>
+        &lt;!&ndash; Center content &ndash;&gt;
+        <ion-side-menu-content ng-controller="ContentController">
+        </ion-side-menu-content>
+
+        &lt;!&ndash; Left menu &ndash;&gt;
+        <ion-side-menu side="left">
+        </ion-side-menu>
+
+        &lt;!&ndash; Right menu &ndash;&gt;
+        <ion-side-menu side="right">
+        </ion-side-menu>
+    </ion-side-menus>-->
+
+    <ion-view title="Help">
+        <ion-content padding="true">
+            <h2>Blank</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis architecto hic officia quasi excepturi sequi deleniti maiores consectetur veritatis sint?</p>
+        </ion-content>
+    </ion-view>
+</script>
+
+
+<script id="my-modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar>
+            <h1 class="title">My Modal title</h1>
+        </ion-header-bar>
+        <ion-content>
+            Hello!
+            <button ng-click="closeModal()">CLose</button>
+        </ion-content>
+    </ion-modal-view>
+</script>
+
+</body>
 </html>

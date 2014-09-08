@@ -1,0 +1,72 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>Tabs Example</title>
+
+    <link href="http://code.ionicframework.com/1.0.0-beta.11/css/ionic.css" rel="stylesheet">
+    <script src="http://code.ionicframework.com/1.0.0-beta.11/js/ionic.bundle.js"></script>
+
+    <script>
+        var app = angular.module('ionicApp', ['ionic']);
+        app.config(function($stateProvider, $urlRouterProvider) {
+            $stateProvider
+                    .state('index', {
+                        url: '/',
+                        templateUrl: 'home.html'
+                    })
+                    .state('music', {
+                        url: '/music',
+                        templateUrl: 'music.html'
+                    })
+                    .state('errorPage', {
+                        url: '/errorPage',
+                        templateUrl: 'errorPage.html'
+                    });
+            $urlRouterProvider.otherwise('/errorPage');
+        });
+
+    </script>
+
+</head>
+
+<body >
+
+
+<ion-nav-view animation="slide-left-right">
+    <!-- Center content -->
+</ion-nav-view>
+
+<div class="tabs">
+    <a ng-href="#/" class="tab-item">
+        Home
+    </a>
+    <a ng-href="#/music" class="tab-item">
+        Music
+    </a>
+</div>
+
+<script id="music.html" type="text/ng-template">
+    <!-- The title of the ion-view will be shown on the navbar -->
+    <ion-view title="'Music'">
+        <ion-content >
+            <!-- The content of the page -->
+            <h2>Music</h2>
+        </ion-content>
+    </ion-view>
+</script>
+
+<script id="errorPage.html" type="text/ng-template">
+    <!-- The title of the ion-view will be shown on the navbar -->
+    <ion-view title="'Music'">
+        <ion-content >
+            <!-- The content of the page -->
+            <h2>Page Not Found 404</h2>
+        </ion-content>
+    </ion-view>
+</script>
+
+
+</body>
+</html>

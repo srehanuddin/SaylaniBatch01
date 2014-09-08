@@ -1,0 +1,366 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>Tabs Example</title>
+
+    <link href="http://code.ionicframework.com/1.0.0-beta.11/css/ionic.css" rel="stylesheet">
+    <script src="http://code.ionicframework.com/1.0.0-beta.11/js/ionic.bundle.js"></script>
+
+    <!--<script src="js/app.js"></script>-->
+    <script>
+        var app = angular.module('ionicApp', ['ionic']);
+        app.config(function($stateProvider, $urlRouterProvider) {
+            $stateProvider
+                    .state('index', {
+                        url: '/',
+                        templateUrl: 'home.html',
+                        controller : "homeController"
+                    })
+                    .state('music', {
+                        url: '/music',
+                        templateUrl: 'music.html',
+                        controller : "musicController"
+                    })
+            .state('slider', {
+                url: '/slider',
+                templateUrl: 'slider.html',
+                controller : "sliderController"
+            });
+            $urlRouterProvider.otherwise('/');
+        });
+
+        app.controller('musicController',function($scope,$ionicActionSheet, $ionicPopover){
+            $scope.MusicTitle = "Music";
+
+            $scope.show = function() {
+
+                // Show the action sheet
+                var hideSheet = $ionicActionSheet.show({
+                    buttons: [
+                        { text: '<b>Share</b> This' },
+                        { text: '<b>Share</b> This' },
+                        { text: '<b>Share</b> This' },
+                        { text: 'Move' }
+                    ],
+                    destructiveText: 'Delete',
+                    titleText: 'Modify your album',
+                    cancelText: 'Cancel',
+                    cancel: function() {
+                        alert("cancel");
+                        // add cancel code..
+                        //hideSheet();
+                    },
+                    buttonClicked: function(index) {
+                        alert("Clicked Button : " + index);
+                        return true;
+                    },
+                    destructiveButtonClicked: function(){
+                        alert("destructiveButtonClicked");
+                    }
+                });
+
+            };
+            $scope.show();
+            //hideSheet();
+
+
+
+            $ionicPopover.fromTemplateUrl('my-popover.html', {
+                scope: $scope
+            }).then(function(popover) {
+                $scope.popover = popover;
+            });
+            $scope.openPopover = function($event) {
+                $scope.popover.show($event);
+            };
+            $scope.closePopover = function() {
+                $scope.popover.hide();
+                alert("closePopover");
+            };
+            //Cleanup the popover when we're done with it!
+            $scope.$on('$destroy', function() {
+                $scope.popover.remove();
+                alert("$destroy");
+            });
+            // Execute action on hide popover
+            $scope.$on('popover.hidden', function() {
+                // Execute action
+                alert("hidden");
+            });
+            // Execute action on remove popover
+            $scope.$on('popover.removed', function() {
+                // Execute action
+                alert("hidden");
+            });
+
+
+        });
+        app.controller('homeController',function($scope, $ionicLoading, $ionicPopup, $ionicBackdrop, $ionicModal){
+            $scope.HomeTitle = "Home1";
+            $scope.show = function() {
+                $ionicLoading.show({
+                    template: 'Loading...'
+                });
+            };
+            $scope.hide = function(){
+                $ionicLoading.hide();
+            };
+
+            $scope.show();
+            setTimeout(function(){
+                $scope.hide();
+            },3000)
+
+            /*$scope.action = function() {
+                $ionicBackdrop.retain();
+                setTimeout(function() {
+                    $ionicBackdrop.release();
+                }, 1000);
+            };
+            $scope.action();
+*/
+            $scope.showPopup = function() {
+                $scope.data = {}
+
+                // An elaborate, custom popup
+                var myPopup = $ionicPopup.show({
+                    template: '<input type="password" ng-model="data.wifi">',
+                    title: 'Enter Wi-Fi Password',
+                    subTitle: 'Please use normal things',
+                    scope: $scope,
+                    buttons: [
+                        { text: 'Cancel' },
+                        { text: 'Cancel' },
+                        { text: 'Cancel' },
+                        { text: 'Cancel' },
+                        { text: 'Cancel' },
+                        { text: 'Cancel' },
+                        {
+                            text: '<b>Save</b>',
+                            type: 'button-positive',
+                            onTap: function(e) {
+                                if (!$scope.data.wifi) {
+                                    //don't allow the user to close unless he enters wifi password
+                                    e.preventDefault();
+                                } else {
+                                    return $scope.data.wifi;
+                                }
+                            }
+                        },
+                        {
+                            text: '<b>Save</b>',
+                            type: 'button-positive',
+                            onTap: function(e) {
+                                if (!$scope.data.wifi) {
+                                    //don't allow the user to close unless he enters wifi password
+                                    e.preventDefault();
+                                } else {
+                                    return $scope.data.wifi;
+                                }
+                            }
+                        },
+                    ]
+                });
+                myPopup.then(function(res) {
+                    console.log('Tapped!', res);
+                });
+                $timeout(function() {
+                    myPopup.close(); //close the popup after 3 seconds for some reason
+                }, 3000);
+            };
+
+            $ionicModal.fromTemplateUrl('my-modal.html', {
+                scope: $scope,
+                animation: 'slide-in-up'
+            }).then(function(modal) {
+                        $scope.modal = modal;
+                    });
+            $scope.openModal = function() {
+                $scope.modal.show();
+            };
+            $scope.closeModal = function() {
+                $scope.modal.hide();
+            };
+            //Cleanup the modal when we're done with it!
+            $scope.$on('$destroy', function() {
+                $scope.modal.remove();
+            });
+            // Execute action on hide modal
+            $scope.$on('modal.hidden', function() {
+                // Execute action
+            });
+            // Execute action on remove modal
+            $scope.$on('modal.removed', function() {
+                // Execute action
+            });
+
+        })
+        app.controller('sliderController',function($scope, $ionicSlideBoxDelegate){
+            $scope.nextSlide = function() {
+                $ionicSlideBoxDelegate.next();
+            }
+            $scope.previousSlide = function() {
+                $ionicSlideBoxDelegate.previous();
+            }
+            $scope.gotoSlide = function(index) {
+                $ionicSlideBoxDelegate.slide(index, 3000);
+            }
+            $scope.test = function(index) {
+                //alert(index)
+                $ionicSlideBoxDelegate.slide(index, 3000);
+            }
+            $scope.onHold = function() {
+                alert("HOLD")
+            }
+        })
+    </script>
+
+    <style>
+
+        .box{
+            text-align: center;
+            height: 100%;
+        }
+        .blue{
+            background: blue;
+        }
+        .yellow{
+            background: yellow;
+        }
+        .pink{
+            background: pink;
+        }
+    </style>
+
+</head>
+
+<body >
+
+
+<ion-side-menus>
+    <!-- Center content -->
+    <ion-side-menu-content >
+        <ion-nav-view animation="slide-left-right">
+            <!-- Center content -->
+        </ion-nav-view>
+
+        <div class="tabs">
+            <a ng-href="#/" class="tab-item">
+                Home
+            </a>
+            <a ng-href="#/music" class="tab-item">
+                Music
+            </a>
+            <a ng-href="#/slider" class="tab-item">
+                Slider
+            </a>
+        </div>
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left">
+        <div class="list">
+            <a ng-href="#/" class="item">
+                Home
+            </a>
+            <a ng-href="#/music" class="item">
+                Music
+            </a>
+            <a ng-href="#/slider" class="item">
+                Slider
+            </a>
+        </div>
+    </ion-side-menu>
+
+    <!-- Right menu -->
+    <ion-side-menu side="right">
+        right
+    </ion-side-menu>
+</ion-side-menus>
+
+<!--<div class="tabs">
+    <a ng-href="#/" class="tab-item">
+        Home
+    </a>
+    <a ng-href="#/music" class="tab-item">
+        Music
+    </a>
+    <a ng-href="#/slider" class="tab-item">
+        Slider
+    </a>
+</div>-->
+
+
+
+
+<script id="music.html" type="text/ng-template">
+    <!-- The title of the ion-view will be shown on the navbar -->
+    <ion-view title="Music">
+        <ion-content padding="true">
+            <h2>{{MusicTitle}} Page</h2>
+            <p>Here's the main route for the app.</p>
+
+            <p>
+                <button ng-click="openPopover($event)">Open Popover</button>
+                <button ng-click="openPopover($event)">Open Popover</button>
+            </p>
+        </ion-content>
+    </ion-view>
+</script>
+
+<script id="my-popover.html" type="text/ng-template">
+    <ion-popover-view>
+        <ion-header-bar>
+            <h1 class="title">My Popover Title</h1>
+        </ion-header-bar>
+        <ion-content>
+            Hello!
+        </ion-content>
+    </ion-popover-view>
+</script>
+
+
+<script id="slider.html" type="text/ng-template">
+    <!-- The title of the ion-view will be shown on the navbar -->
+    <ion-view title="Slider">
+        <ion-slide-box show-pager="true" pager-click="test(index)" >
+            <ion-slide>
+                <div class="box blue"><h1>BLUE</h1></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box yellow"><h1>YELLOW</h1></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box pink"><h1>PINK</h1></div>
+            </ion-slide>
+        </ion-slide-box>
+
+        <div style="position: absolute; top:0; width: 100%; text-align: center">
+            <button on-swipe-up="onHold()">onHold</button>
+            <button ng-click="gotoSlide(0)">1</button>
+            <button ng-click="gotoSlide(1)">2</button>
+            <button ng-click="gotoSlide(2)">3</button>
+        </div>
+        <button style="position: absolute; top:0; left: 0" ng-click="previousSlide()">Previous</button>
+        <button style="position: absolute; top:0; right: 0" ng-click="nextSlide()">Next</button>
+
+    </ion-view>
+</script>
+
+
+<script id="my-modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar>
+            <h1 class="title">My Modal title</h1>
+        </ion-header-bar>
+        <ion-content>
+            Hello!
+            <button ng-click="closeModal()">Close</button>
+        </ion-content>
+    </ion-modal-view>
+</script>
+
+</body>
+</html>
