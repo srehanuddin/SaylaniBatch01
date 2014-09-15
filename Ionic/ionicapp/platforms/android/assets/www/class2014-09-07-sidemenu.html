@@ -230,6 +230,64 @@
 
 <body >
 
+<ion-side-menus>
+    <!-- Center content -->
+    <ion-side-menu-content >
+
+        <ion-nav-view animation="slide-left-right">
+            &lt;!&ndash; Center content &ndash;&gt;
+        </ion-nav-view>
+
+        <div class="tabs">
+            <a ng-href="#/" class="tab-item">
+                Home
+            </a>
+            <a ng-href="#/music" class="tab-item">
+                Music
+            </a>
+            <a ng-href="#/slideBox" class="tab-item">
+                Slide
+            </a>
+            <a ng-href="#/other" class="tab-item">
+                Other
+            </a>
+        </div>
+
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left">
+
+        <div class="list">
+
+            <a  ng-href="#/" class="item">
+                Candy Bars
+            </a>
+
+            <a  ng-href="#/music" class="item">
+                Candy Bars
+            </a>
+            <a  ng-href="#/slideBox" class="item">
+                Candy Bars
+            </a>
+            <a  ng-href="#/other" class="item">
+                Candy Bars
+            </a>
+        </div>
+
+    </ion-side-menu>
+
+    <!-- Right menu -->
+    <ion-side-menu side="right">
+        Right
+    </ion-side-menu>
+</ion-side-menus>
+
+
+
+
+
+
 
 <script id="other.html" type="text/ng-template">
     <ion-view title="Other">
@@ -241,24 +299,6 @@
 </script>
 
 
-<ion-nav-view animation="slide-left-right">
-    &lt;!&ndash; Center content &ndash;&gt;
-</ion-nav-view>
-
-<div class="tabs">
-    <a ng-href="#/" class="tab-item">
-        Home
-    </a>
-    <a ng-href="#/music" class="tab-item">
-        Music
-    </a>
-    <a ng-href="#/slideBox" class="tab-item">
-        Slide
-    </a>
-    <a ng-href="#/other" class="tab-item">
-        Other
-    </a>
-</div>
 
 <script id="music.html" type="text/ng-template">
     &lt;!&ndash; The title of the ion-view will be shown on the navbar &ndash;&gt;

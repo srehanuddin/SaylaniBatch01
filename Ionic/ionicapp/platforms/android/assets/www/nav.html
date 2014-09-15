@@ -23,11 +23,11 @@
                         templateUrl: 'music.html',
                         controller : "musicController"
                     })
-            .state('slider', {
-                url: '/slider',
-                templateUrl: 'slider.html',
-                controller : "sliderController"
-            });
+                    .state('slider', {
+                        url: '/slider',
+                        templateUrl: 'slider.html',
+                        controller : "sliderController"
+                    });
             $urlRouterProvider.otherwise('/');
         });
 
